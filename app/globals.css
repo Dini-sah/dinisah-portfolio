@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-primary-color: #33E092;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  cursor: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiCiAgICAgICAgICAgICAgICB2aWV3Qm94PSIwIDAgOCA4Ij48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iNCIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMGUxMDE2Ii8+PC9zdmc+) 4 4, auto
+}
+
+body {
+  background-color: #ede9df;
+  background-image:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.42) 0 12%, transparent 12% 100%),
+    linear-gradient(72deg, transparent 0 58%, rgba(209, 202, 187, 0.28) 58% 64%, transparent 64% 100%),
+    linear-gradient(158deg, transparent 0 28%, rgba(255, 255, 255, 0.34) 28% 34%, transparent 34% 100%),
+    repeating-linear-gradient(7deg, rgba(39, 39, 42, 0.035) 0 1px, transparent 1px 12px),
+    repeating-linear-gradient(97deg, rgba(39, 39, 42, 0.025) 0 1px, transparent 1px 18px),
+    radial-gradient(circle at 10% 8%, rgba(229, 72, 77, 0.10), transparent 24rem),
+    radial-gradient(circle at 92% 14%, rgba(51, 224, 146, 0.12), transparent 26rem),
+    radial-gradient(circle at 50% 78%, rgba(24, 24, 27, 0.05), transparent 34rem),
+    url("../public/noise.png");
+  background-size: 42rem 42rem, 38rem 38rem, 34rem 34rem, 16rem 16rem, 20rem 20rem, auto, auto, auto, 200px 200px;
+  background-position: 0 0;
+  background-attachment: fixed;
+}
+
+.dark body {
+  background-color: #18181b;
+  background-image: url("../public/noise.png");
+  background-size: 200px 200px;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--incognito), "Inter", sans-serif;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
+
+.path {
+  stroke-dasharray: 500px 100px;
+  animation: animate 100s linear infinite alternate-reverse;
+}
+
+@keyframes animate {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: 12433.8193359375;
+  }
+}
+
+.circle {
+  --circle-size: 40px;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2);
+  left: calc(var(--circle-size) / 2);
+  pointer-events: none;
+  background: #fff;
+  will-change: transform;
+  mix-blend-mode: difference;
+  z-index: 9999999;
+}
+
+.active_info {
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(26px / 1);
+  padding: 16px 18px 16px 16px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.version-staleness-indicator.fresh {
+  fill: var(--color-green-800);
+  stroke: var(--color-green-300);
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide {
+  display: inline-block;
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+.character-roll {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  will-change: transform;
+}
+
+.character-roll span {
+  text-align: center;
+}
+
+@keyframes loadingFade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-fadeDot {
+  animation: loadingFade 1s infinite;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
