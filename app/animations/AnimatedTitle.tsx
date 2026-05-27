@@ -25,6 +25,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ title, style = '' }) => {
             };
         }
     };
+
     return (
         <h1 aria-label={title} role="heading">
             <span

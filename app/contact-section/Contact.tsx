@@ -33,24 +33,24 @@ export default function Contact() {
                     viewport={{ once: true, margin: "-120px" }}
                     transition={{ duration: 0.8, ease: revealEase }}
                 >
-                    <SpotlightCard className="min-h-[560px]" spotlightColor="rgba(229, 72, 77, 0.24)">
-                        <div className="flex min-h-[560px] flex-col justify-between p-6 md:p-10">
+                    <SpotlightCard className="min-h-[520px] md:min-h-[560px]" spotlightColor="rgba(229, 72, 77, 0.24)">
+                        <div className="flex min-h-[520px] flex-col justify-between p-5 sm:p-6 md:min-h-[560px] md:p-10">
                             <div>
-                                <p className="mb-6 text-sm uppercase tracking-[0.18em] text-[#e5484d] dark:text-primary-color">
+                                <p className="mb-6 text-sm uppercase tracking-[0.18em] text-[#e5484d] dark:text-primary-color max-[374px]:mb-5 max-[374px]:text-xs">
                                     Contact
                                 </p>
-                                <h2 className="max-w-[900px] text-6xl font-extrabold uppercase leading-[0.84] text-zinc-900 dark:text-[#e4ded7] sm:text-8xl lg:text-[132px]">
+                                <h2 className="max-w-[900px] text-[clamp(2.5rem,14vw,6rem)] font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-8xl lg:text-[132px]">
                                     Let&apos;s build the next sharp interface
                                 </h2>
                             </div>
 
                             <div className="grid gap-6 md:grid-cols-2 md:items-end">
-                                <p className="max-w-[420px] text-lg font-medium leading-relaxed text-zinc-600 dark:text-zinc-300">
+                                <p className="max-w-[420px] text-base font-medium leading-relaxed text-zinc-600 dark:text-zinc-300 sm:text-lg">
                                     Send the problem, product context, and what needs to move. I&apos;ll reply with a practical path forward.
                                 </p>
                                 <Link
                                     href="mailto:hello@dineshkumar.dev"
-                                    className="flex min-h-[72px] items-center justify-center rounded-lg bg-zinc-900 px-6 text-lg font-bold text-white dark:bg-[#e4ded7] dark:text-zinc-950"
+                                    className="flex min-h-[72px] items-center justify-center rounded-lg bg-zinc-900 px-5 text-base font-bold text-white dark:bg-[#e4ded7] dark:text-zinc-950 sm:px-6 sm:text-lg"
                                     data-sticky
                                 >
                                     Start a Project
@@ -68,15 +68,15 @@ export default function Contact() {
                     transition={{ delay: 0.08, duration: 0.8, ease: revealEase }}
                 >
                     <SpotlightCard spotlightColor="rgba(51, 224, 146, 0.24)">
-                        <div className="p-6 md:p-8">
-                            <h3 className="mb-8 text-2xl font-bold text-zinc-900 dark:text-[#e4ded7]">
+                        <div className="p-5 sm:p-6 md:p-8">
+                            <h3 className="mb-8 text-xl font-bold text-zinc-900 dark:text-[#e4ded7] sm:text-2xl">
                                 Available for
                             </h3>
                             <div className="space-y-4">
                                 {availability.map((item) => (
                                     <p
                                         key={item}
-                                        className="border-t border-zinc-200 pt-4 text-base font-medium text-zinc-600 dark:border-zinc-800 dark:text-zinc-300"
+                                        className="border-t border-zinc-200 pt-4 text-sm font-medium leading-snug text-zinc-600 dark:border-zinc-800 dark:text-zinc-300 sm:text-base"
                                     >
                                         {item}
                                     </p>
@@ -86,8 +86,8 @@ export default function Contact() {
                     </SpotlightCard>
 
                     <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-                        <div className="p-6 md:p-8">
-                            <h3 className="mb-8 text-2xl font-bold text-zinc-900 dark:text-[#e4ded7]">
+                        <div className="p-5 sm:p-6 md:p-8">
+                            <h3 className="mb-8 text-xl font-bold text-zinc-900 dark:text-[#e4ded7] sm:text-2xl">
                                 Links
                             </h3>
                             <div className="space-y-5">

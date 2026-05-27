@@ -5,6 +5,8 @@ import { motion, useMotionValue, animate, useSpring } from "framer-motion";
 export default function Cursor() {
     const [cursorSize, setCursorSize] = useState({ x: 40, y: 40 });
     const [cursorText, setCursorText] = useState('');
+    const [isVisible, setIsVisible] = useState(false);
+    const [hasFinePointer, setHasFinePointer] = useState(false);
     const hoveredElementRef = useRef<HTMLElement | null>(null);
     const [borderRadius, setBorderRadius] = useState("50%");
     const tooltipRef = useRef<HTMLDivElement | null>(null);
@@ -49,6 +51,7 @@ export default function Cursor() {
     const handleMouseMove = useCallback((e: MouseEvent) => {
         const { clientX, clientY } = e;
 
+        setIsVisible(true);
         mouseX.set(clientX - cursorSize.x / 2);
         mouseY.set(clientY - cursorSize.y / 2);
 
@@ -130,11 +133,35 @@ export default function Cursor() {
     }, [resetCursor, resetElement]);
 
     useEffect(() => {
+        const pointerQuery = window.matchMedia("(pointer: fine)");
+        const updatePointer = () => {
+            setHasFinePointer(pointerQuery.matches);
+            if (!pointerQuery.matches) {
+                setIsVisible(false);
+            }
+        };
+
+        updatePointer();
+        pointerQuery.addEventListener("change", updatePointer);
+
+        return () => {
+            pointerQuery.removeEventListener("change", updatePointer);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!hasFinePointer) return;
+
         const stickyElements = document.querySelectorAll<HTMLElement>("[data-sticky]");
         const stickyTooltip = document.querySelectorAll<HTMLElement>("[data-sticky-tooltip]");
         const hoverCard = document.querySelectorAll<HTMLElement>("[data-hover]");
+        const hideCursor = () => {
+            resetCursor();
+            setIsVisible(false);
+        };
 
         window.addEventListener("mousemove", handleMouseMove);
+        document.documentElement.addEventListener("mouseleave", hideCursor);
         stickyElements.forEach((el) => {
             el.addEventListener("mouseenter", handleMouseEnter);
             el.addEventListener("mouseleave", handleMouseLeave);
@@ -150,6 +177,7 @@ export default function Cursor() {
 
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
+            document.documentElement.removeEventListener("mouseleave", hideCursor);
             stickyElements.forEach((el) => {
                 el.removeEventListener("mouseenter", handleMouseEnter);
                 el.removeEventListener("mouseleave", handleMouseLeave);
@@ -163,7 +191,9 @@ export default function Cursor() {
                 el.removeEventListener("mouseleave", handleMouseLeave);
             });
         };
-    }, [handleMouseEnter, handleMouseLeave, handleMouseMove]);
+    }, [handleMouseEnter, handleMouseLeave, handleMouseMove, hasFinePointer, resetCursor]);
+
+    if (!hasFinePointer) return null;
 
     return (
         <motion.div
@@ -176,7 +206,8 @@ export default function Cursor() {
             animate={{
                 width: cursorSize.x,
                 height: cursorSize.y,
-                borderRadius
+                borderRadius,
+                opacity: isVisible ? 1 : 0,
             }}>
             <motion.div ref={tooltipRef} className="text-xs w-fit flow-root p-2 text-[#e5484d] dark:text-[#e4ded7] mix-blend-difference" style={{ whiteSpace: 'nowrap' }}>{cursorText}</motion.div>
         </motion.div>

@@ -5,9 +5,10 @@ type Props = {
     birthDate?: string,
     value?: number;
     className?: string;
+    precision?: number;
 };
 
-export default function Counter({ birthDate, value, className }: Props) {
+export default function Counter({ birthDate, value, className, precision = 0 }: Props) {
     const ref = useRef<HTMLSpanElement | null>(null);
 
     const motionValue = useMotionValue(0);
@@ -26,7 +27,9 @@ export default function Counter({ birthDate, value, className }: Props) {
                 const ageInMs = now.getTime() - birth.getTime();
                 const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25);
                 if (ref.current) {
-                    ref.current.textContent = `${ageInYears.toFixed(9)}`;
+                    ref.current.textContent = precision > 0
+                        ? ageInYears.toFixed(precision)
+                        : `${Math.floor(ageInYears)}`;
                 }
                 frameId = requestAnimationFrame(updateAge);
             }
@@ -34,7 +37,7 @@ export default function Counter({ birthDate, value, className }: Props) {
         }
 
         return () => cancelAnimationFrame(frameId);
-    }, [isInView, value, motionValue, birthDate]);
+    }, [isInView, value, motionValue, birthDate, precision]);
 
     useEffect(() => {
         const unsubscribe = springValue.on("change", (latest: number) => {

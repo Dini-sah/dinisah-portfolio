@@ -5,39 +5,48 @@ import SpotlightCard from "../components/spotLightCard";
 
 const projects = [
     {
-        title: "Revenue Console",
-        type: "SaaS Dashboard",
+        title: "HFI Project Pages",
+        type: "Enterprise Web",
+        year: "2026",
+        impact: "Built campaign pages and handled Global Payments delivery tasks",
+        stack: ["PHP", "React", "TypeScript", "Tailwind"],
+        description:
+            "Created HFI project pages, focusing on responsive page builds, content accuracy, and production-ready frontend delivery.",
+    },
+    {
+        title: "Global Payments Sitecore",
+        type: "Sitecore Development",
         year: "2025",
-        impact: "Cut report review time by 42%",
-        stack: ["Next.js", "TypeScript", "Tailwind", "Node"],
+        impact: "Delivered Sitecore frontend updates for the Global Payments team",
+        stack: ["Sitecore", "JavaScript", "Sass", "HTML"],
         description:
-            "A dense operator dashboard for finance teams with filtered drilldowns, reusable table states, and fast client-side transitions.",
+            "Worked with the Global Payments team on Sitecore development, building and updating reusable page sections, layouts, and frontend components.",
     },
     {
-        title: "Campaign Studio",
-        type: "Marketing Tool",
+        title: "GameIn Commerce Platform",
+        type: "Streaming Commerce",
         year: "2024",
-        impact: "Moved 11 manual steps into one flow",
-        stack: ["React", "GSAP", "REST", "Salesforce"],
+        impact: "Enabled gamers and creators to sell products through streams",
+        stack: ["React", "Nest", "PostgreSQL", "Fastify", "Redix"],
         description:
-            "A guided build surface for campaign teams, combining live preview, validation, and release-ready assets in a single workspace.",
+            "Worked on a platform for gamers and creators to sell products through a stream-like experience, connecting product discovery with live creator content.",
     },
     {
-        title: "Vendor Portal",
-        type: "Workflow App",
+        title: "Employee Tracker",
+        type: "Organization Tool",
         year: "2023",
-        impact: "Improved mobile task completion",
-        stack: ["Angular", "Sass", "MongoDB", "GraphQL"],
+        impact: "Built an internal MERN stack tracking system",
+        stack: ["MongoDB", "Express", "React", "Node"],
         description:
-            "Responsive portal modules for onboarding, document checks, and status visibility across internal and external users.",
+            "Created an employee tracker for the organization using the MERN stack, covering employee records, status visibility, and practical internal workflows.",
     },
 ];
 
-const principles = [
-    "Make interfaces obvious under pressure",
-    "Ship small, measurable improvements",
-    "Keep design systems useful, not ceremonial",
-    "Treat performance as part of the UX",
+const workHighlights = [
+    "Enterprise CMS page builds",
+    "MERN stack internal tools",
+    "Creator commerce interfaces",
+    "Responsive production delivery",
 ];
 
 const revealEase = [0.2, 0.65, 0.3, 0.9] as const;
@@ -90,7 +99,7 @@ export default function Works() {
                                         transition={{ delay: index * 0.08, duration: 0.7, ease: revealEase }}
                                     >
                                         <div className="md:col-span-3">
-                                            <span className="text-sm text-zinc-500 dark:text-zinc-400">
+                                            <span className="text-sm text-[#e5484d] dark:text-primary-color">
                                                 0{index + 1} / {project.year}
                                             </span>
                                         </div>
@@ -128,38 +137,48 @@ export default function Works() {
                         </div>
                     </motion.div>
 
-                    <motion.div className="lg:col-span-4" {...sectionAnimation}>
-                        <SpotlightCard className="h-full" spotlightColor="rgba(51, 224, 146, 0.24)">
-                            <div className="flex h-full min-h-[520px] flex-col justify-between p-6 md:p-8">
+                    <motion.div className="grid gap-6 lg:col-span-4" {...sectionAnimation}>
+                        <SpotlightCard spotlightColor="rgba(51, 224, 146, 0.24)">
+                            <div className="p-6 md:p-8">
                                 <div>
                                     <p className="mb-6 text-sm uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
-                                        Operating pattern
+                                        Work focus
                                     </p>
-                                    <h3 className="text-4xl font-bold uppercase leading-[0.9] text-zinc-900 dark:text-[#e4ded7] md:text-5xl">
-                                        Prototype. Measure. Harden.
+                                    <h3 className="text-3xl font-bold uppercase leading-[0.92] text-zinc-900 dark:text-[#e4ded7] md:text-4xl">
+                                        Frontend work across real product teams.
                                     </h3>
+                                    <p className="mt-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-300">
+                                        Recent work spans internal tools, commerce experiences, and enterprise CMS delivery for teams that need clean, responsive pages shipped reliably.
+                                    </p>
                                 </div>
+                            </div>
+                        </SpotlightCard>
 
-                                <div className="my-10 grid grid-cols-2 gap-3">
-                                    {["01", "02", "03", "04"].map((item) => (
+                        <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
+                            <div className="p-6 md:p-8">
+                                <p className="mb-6 text-sm uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
+                                    Project range
+                                </p>
+                                <div className="mb-8 grid grid-cols-2 gap-3">
+                                    {["2023", "2024", "2025", "2026"].map((item) => (
                                         <div
                                             key={item}
-                                            className="aspect-square rounded-lg border border-zinc-300 p-4 dark:border-zinc-700"
+                                            className="flex min-h-[82px] items-center justify-center rounded-lg border border-zinc-300 p-4 dark:border-zinc-700"
                                         >
-                                            <span className="text-3xl font-bold text-zinc-900 dark:text-[#e4ded7]">
+                                            <span className="text-2xl font-bold text-zinc-900 dark:text-[#e4ded7]">
                                                 {item}
                                             </span>
                                         </div>
                                     ))}
                                 </div>
 
-                                <ul className="space-y-4">
-                                    {principles.map((principle) => (
+                                <ul className="space-y-3">
+                                    {workHighlights.map((highlight) => (
                                         <li
-                                            key={principle}
-                                            className="border-t border-zinc-200 pt-4 text-base font-medium text-zinc-600 dark:border-zinc-800 dark:text-zinc-300"
+                                            key={highlight}
+                                            className="border-t border-zinc-200 pt-3 text-sm font-medium leading-snug text-zinc-600 dark:border-zinc-800 dark:text-zinc-300"
                                         >
-                                            {principle}
+                                            {highlight}
                                         </li>
                                     ))}
                                 </ul>

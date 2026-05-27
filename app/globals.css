@@ -111,6 +111,17 @@ html.lenis body {
   z-index: 9999999;
 }
 
+@media (pointer: coarse) {
+  html,
+  body {
+    cursor: auto;
+  }
+
+  .circle {
+    display: none;
+  }
+}
+
 .active_info {
   -webkit-font-smoothing: antialiased;
   display: flex;

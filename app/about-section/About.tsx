@@ -30,6 +30,8 @@ import GsapLogo from "../assets/icons/tools/Gsap.svg";
 import GraphLogo from "../assets/icons/tools/Graph.svg";
 import AngularLogo from "../assets/icons/tools/Angular.svg";
 import BootstrapLogo from "../assets/icons/tools/Bootstrap.svg";
+import GlobalpaymentsSVG from "../assets/icons/logo/globalpayments-logo";
+import HfiSVG from "../assets/icons/logo/hfi";
 
 const revealEase = [0.2, 0.65, 0.3, 0.9] as const;
 
@@ -79,8 +81,8 @@ export default function About() {
             className="relative z-10 w-full items-center justify-center overflow-hidden bg-center py-20 md:py-24 lg:py-28"
             id="about"
         >
-            <div className="mx-auto grid h-full w-[87%] gap-8 md:grid-cols-12 lg:max-w-[1440px]">
-                <div className="w-full space-y-2.5 xl:col-span-8 md:col-span-12">
+            <div className="mx-auto grid h-full w-[87%] min-w-0 gap-8 md:grid-cols-12 lg:max-w-[1440px]">
+                <div className="min-w-0 w-full space-y-2.5 xl:col-span-8 md:col-span-12">
                     <div className="grid h-full w-full grid-cols-1 gap-8 md:grid-cols-12">
                         <motion.div className="row-span-2 md:col-span-6" {...parallaxReveal(0, 44)}>
                             <SpotlightCard className="h-full" spotlightColor="rgba(229, 72, 77, 0.22)">
@@ -151,57 +153,62 @@ export default function About() {
                                 <span className="text-4xl">-&gt;</span>
                             </a>
                         </motion.div>
-                        <motion.div className="row-span-2 grid grid-cols-12 gap-8 md:col-span-12" {...parallaxReveal(0.2, 46)}>
-                            <div className="age col-span-6">
+                        <motion.div className="row-span-2 grid grid-cols-1 gap-4 min-[375px]:grid-cols-12 sm:gap-8 md:col-span-12" {...parallaxReveal(0.2, 46)}>
+                            <div className="age min-[375px]:col-span-6">
                                 <SpotlightCard className="h-full" spotlightColor="rgba(255, 255, 255, 0.25)">
-                                    <div className="age_wrapper flex h-full flex-col justify-between p-6">
-                                        <h2 className="mb-6 text-xl">Age</h2>
-                                        <span className="text-4xl font-bold text-zinc-900 dark:text-[#e4ded7]">
-                                            <Counter birthDate="1997-09-08" />
-                                        </span>
-                                        <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">Still learning, still shipping.</p>
+                                    <div className="age_wrapper flex h-full min-h-[210px] flex-col justify-between p-5 sm:p-6">
+                                        <h2 className="text-lg sm:text-xl">Age</h2>
+                                        <div>
+                                            <span className="block text-6xl font-bold leading-none text-zinc-900 dark:text-[#e4ded7] sm:text-7xl">
+                                                <Counter birthDate="1997-09-08" />
+                                            </span>
+                                            <span className="mt-2 block overflow-hidden text-ellipsis whitespace-nowrap font-mono text-xs tabular-nums text-zinc-500 dark:text-zinc-400 sm:text-sm">
+                                                <Counter birthDate="1997-09-08" precision={9} />
+                                            </span>
+                                        </div>
+                                        <p className="text-sm leading-snug text-zinc-500 dark:text-zinc-400">Still learning, still shipping.</p>
                                     </div>
                                 </SpotlightCard>
                             </div>
-                            <div className="project col-span-6">
+                            <div className="project min-[375px]:col-span-6">
                                 <SpotlightCard className="h-full" spotlightColor="rgba(255, 255, 255, 0.25)">
-                                    <div className="project_wrapper flex h-full flex-col justify-between p-6">
-                                        <h2 className="mb-6 text-xl">Projects</h2>
+                                    <div className="project_wrapper flex h-full min-h-[190px] flex-col justify-between p-5 sm:p-6">
+                                        <h2 className="text-lg sm:text-xl">Projects</h2>
                                         <span className="text-4xl font-bold text-zinc-900 dark:text-[#e4ded7]">
                                             <Counter value={10} />
                                         </span>
-                                        <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">Interfaces, dashboards, and workflows.</p>
+                                        <p className="text-sm leading-snug text-zinc-500 dark:text-zinc-400">Interfaces, dashboards, and workflows.</p>
                                     </div>
                                 </SpotlightCard>
                             </div>
                         </motion.div>
                     </div>
                 </div>
-                <div className="row-span-1 grid h-full gap-8 space-y-2.5 xl:col-span-4 md:col-span-6">
-                    <motion.div className="md:col-span-12" {...parallaxReveal(0.1, 58)}>
-                        <SpotlightCard className="h-full" spotlightColor="rgba(255, 255, 255, 0.25)">
-                            <div className="experience_container p-6">
-                                <div className="experience_wrapper">
+                <div className="row-span-1 grid h-full min-w-0 gap-8 space-y-2.5 xl:col-span-4 md:col-span-6">
+                    <motion.div className="min-w-0 md:col-span-12" {...parallaxReveal(0.1, 58)}>
+                        <SpotlightCard className="h-full min-w-0" spotlightColor="rgba(255, 255, 255, 0.25)">
+                            <div className="experience_container min-w-0 p-6">
+                                <div className="experience_wrapper min-w-0">
                                     <h2 className="mb-6 text-xl">Experience</h2>
-                                    <div className="experience flex flex-col gap-6">
+                                    <div className="experience flex min-w-0 flex-col gap-6">
                                         {[
-                                            ["2022 - Now", "Frontend Developer", "RR Donnelley"],
+                                            ["2022 - Now", "Senior Frontend Developer", "RR Donnelley"],
                                             ["2018 - 2022", "Business Associate", "Accenture"],
                                             ["2017 - 2018", "Web Developer", "Hi5 Technologies"],
                                         ].map(([year, role, company]) => (
-                                            <div key={`${year}-${role}`} className="experience_card flex gap-8 border-t border-zinc-200 pt-5 dark:border-zinc-800">
-                                                <div className="year whitespace-nowrap text-neutral-400">
+                                            <div key={`${year}-${role}`} className="experience_card flex min-w-0 gap-6 border-t border-zinc-200 pt-5 dark:border-zinc-800 sm:gap-8">
+                                                <div className="year shrink-0 whitespace-nowrap text-neutral-400">
                                                     {year}
                                                 </div>
-                                                <div className="organisation">
-                                                    <p>{role}</p>
+                                                <div className="organisation min-w-0">
+                                                    <strong data-sticky="true" style={{transform: "none"}}><p style={{width: "fit-content"}}>{role}</p></strong>
                                                     <p>
                                                         <span className="text-sm text-neutral-400">{company}</span>
                                                     </p>
                                                 </div>
                                             </div>
                                         ))}
-                                        <div className="companies flex flex-col items-center gap-8 text-center text-sm text-zinc-400">
+                                        <div className="companies flex min-w-0 max-w-full flex-col items-center gap-8 overflow-hidden text-center text-sm text-zinc-400">
                                             <p>Companies I&apos;ve collaborated with</p>
                                             <Marquee
                                                 styles="opacity-[.3] hover:opacity-[.7] transition duration-300 ease-in-out"
@@ -211,6 +218,8 @@ export default function About() {
                                                     <JeepSVG key="jeep" />,
                                                     <NasdaqSVG key="nasdaq" />,
                                                     <FiservSVG key="fiserv" />,
+                                                    <GlobalpaymentsSVG key="globalpayments" />,
+                                                    <HfiSVG key="hfi" />
                                                 ]}
                                                 speed={20}
                                             />
@@ -236,7 +245,7 @@ export default function About() {
                                                     {year}
                                                 </div>
                                                 <div className="organisation">
-                                                    <p>{title}</p>
+                                                    <strong data-sticky="true" style={{transform: "none"}}><p style={{width: "fit-content"}}>{title}</p></strong>
                                                     <p>
                                                         <span className="text-sm text-neutral-400">{place}</span>
                                                     </p>
