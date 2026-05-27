@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 const messages = [
     "Hola!",
     "My name is Dinesh Kumar",
-    "But you can call me Dineyy!!!",
+    "But you can call me Dineyyy!!!",
     "Copy my email, and get in touch",
 ];
 

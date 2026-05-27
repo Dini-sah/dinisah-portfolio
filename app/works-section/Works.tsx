@@ -8,7 +8,7 @@ const projects = [
         title: "HFI Project Pages",
         type: "Enterprise Web",
         year: "2026",
-        impact: "Built campaign pages and handled Global Payments delivery tasks",
+        impact: "Built campaign pages and integrated the pages into PHP",
         stack: ["PHP", "React", "TypeScript", "Tailwind"],
         description:
             "Created HFI project pages, focusing on responsive page builds, content accuracy, and production-ready frontend delivery.",
@@ -17,7 +17,7 @@ const projects = [
         title: "Global Payments Sitecore",
         type: "Sitecore Development",
         year: "2025",
-        impact: "Delivered Sitecore frontend updates for the Global Payments team",
+        impact: "Delivered Sitecore frontend updates for the Global Payments",
         stack: ["Sitecore", "JavaScript", "Sass", "HTML"],
         description:
             "Worked with the Global Payments team on Sitecore development, building and updating reusable page sections, layouts, and frontend components.",
@@ -127,7 +127,7 @@ export default function Works() {
                                             </div>
                                         </div>
                                         <div className="flex items-end md:col-span-3 md:justify-end">
-                                            <p className="max-w-[220px] text-lg font-semibold text-[#e5484d] dark:text-primary-color md:text-right">
+                                            <p className="max-w-[220px] text-md font-semibold text-[#e5484d] dark:text-primary-color md:text-right">
                                                 {project.impact}
                                             </p>
                                         </div>

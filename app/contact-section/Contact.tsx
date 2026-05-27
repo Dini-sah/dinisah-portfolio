@@ -7,9 +7,9 @@ import SpotlightCard from "../components/spotLightCard";
 const revealEase = [0.2, 0.65, 0.3, 0.9] as const;
 
 const contactLinks = [
-    { label: "Email", value: "hello@dineshkumar.dev", href: "mailto:hello@dineshkumar.dev" },
-    { label: "LinkedIn", value: "linkedin.com/in/dineshkumar", href: "https://www.linkedin.com/" },
-    { label: "GitHub", value: "github.com/dinisah", href: "https://github.com/" },
+    { label: "Email", value: "dineshaem1997@gmail.com", href: "mailto:dineshaem1997@gmail.com" },
+    { label: "LinkedIn", value: "linkedin.com/in/dineshkumar", href: "https://www.linkedin.com/in/dinesh-kumar-rajasha-866847142/" },
+    { label: "GitHub", value: "github.com/dinisah", href: "https://github.com/Dini-sah" },
 ];
 
 const availability = [
@@ -49,7 +49,7 @@ export default function Contact() {
                                     Send the problem, product context, and what needs to move. I&apos;ll reply with a practical path forward.
                                 </p>
                                 <Link
-                                    href="mailto:hello@dineshkumar.dev"
+                                    href="mailto:dineshaem1997@gmail.com"
                                     className="flex min-h-[72px] items-center justify-center rounded-lg bg-zinc-900 px-5 text-base font-bold text-white dark:bg-[#e4ded7] dark:text-zinc-950 sm:px-6 sm:text-lg"
                                     data-sticky
                                 >
