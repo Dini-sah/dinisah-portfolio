@@ -1,37 +1,37 @@
 "use client";
 
-import SpotlightCard from "../components/spotLightCard";
+import SpotlightCard from "../../components/ui/SpotlightCard";
 import Image from "next/image";
-import ProfileImage from "../../public/ProfileImage.webp";
-import AccentureSVG from "../assets/icons/logo/accenture";
-import WorldpaySVG from "../assets/icons/logo/worldpay";
-import JeepSVG from "../assets/icons/logo/jeep";
-import NasdaqSVG from "../assets/icons/logo/nasdaq";
-import FiservSVG from "../assets/icons/logo/fiserv";
-import Marquee from "../components/marquee";
+import ProfileImage from "../../../public/ProfileImage.webp";
+import AccentureSVG from "../../assets/icons/logo/accenture";
+import WorldpaySVG from "../../assets/icons/logo/worldpay";
+import JeepSVG from "../../assets/icons/logo/jeep";
+import NasdaqSVG from "../../assets/icons/logo/nasdaq";
+import FiservSVG from "../../assets/icons/logo/fiserv";
+import Marquee from "../../components/ui/Marquee";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import ChatPopup from "../animations/ChatPopup";
-import Counter from "../animations/Counter";
-import HtmlLogo from "../assets/icons/tools/Html.svg";
-import CssLogo from "../assets/icons/tools/Css.svg";
-import JsLogo from "../assets/icons/tools/Js.svg";
-import ReactLogo from "../assets/icons/tools/ReactJs.svg";
-import NextLogo from "../assets/icons/tools/NextJs.svg";
-import NodeLogo from "../assets/icons/tools/Node.svg";
-import MongoLogo from "../assets/icons/tools/Mongo.svg";
-import TypescriptLogo from "../assets/icons/tools/Typescript.svg";
-import ViteLogo from "../assets/icons/tools/Vite.svg";
-import TailwindLogo from "../assets/icons/tools/Tailwind.svg";
-import SassLogo from "../assets/icons/tools/Sass.svg";
-import SalesforceLogo from "../assets/icons/tools/Salesforce.svg";
-import JqueryLogo from "../assets/icons/tools/Jquery.svg";
-import GsapLogo from "../assets/icons/tools/Gsap.svg";
-import GraphLogo from "../assets/icons/tools/Graph.svg";
-import AngularLogo from "../assets/icons/tools/Angular.svg";
-import BootstrapLogo from "../assets/icons/tools/Bootstrap.svg";
-import GlobalpaymentsSVG from "../assets/icons/logo/globalpayments-logo";
-import HfiSVG from "../assets/icons/logo/hfi";
+import ChatPopup from "../../animations/ChatPopup";
+import Counter from "../../animations/Counter";
+import HtmlLogo from "../../assets/icons/tools/Html.svg";
+import CssLogo from "../../assets/icons/tools/Css.svg";
+import JsLogo from "../../assets/icons/tools/Js.svg";
+import ReactLogo from "../../assets/icons/tools/ReactJs.svg";
+import NextLogo from "../../assets/icons/tools/NextJs.svg";
+import NodeLogo from "../../assets/icons/tools/Node.svg";
+import MongoLogo from "../../assets/icons/tools/Mongo.svg";
+import TypescriptLogo from "../../assets/icons/tools/Typescript.svg";
+import ViteLogo from "../../assets/icons/tools/Vite.svg";
+import TailwindLogo from "../../assets/icons/tools/Tailwind.svg";
+import SassLogo from "../../assets/icons/tools/Sass.svg";
+import SalesforceLogo from "../../assets/icons/tools/Salesforce.svg";
+import JqueryLogo from "../../assets/icons/tools/Jquery.svg";
+import GsapLogo from "../../assets/icons/tools/Gsap.svg";
+import GraphLogo from "../../assets/icons/tools/Graph.svg";
+import AngularLogo from "../../assets/icons/tools/Angular.svg";
+import BootstrapLogo from "../../assets/icons/tools/Bootstrap.svg";
+import GlobalpaymentsSVG from "../../assets/icons/logo/globalpayments-logo";
+import HfiSVG from "../../assets/icons/logo/hfi";
 
 const revealEase = [0.2, 0.65, 0.3, 0.9] as const;
 
@@ -53,6 +53,15 @@ const toolLogos = [
     { src: AngularLogo, label: "Angular" },
     { src: JqueryLogo, label: "jQuery" },
     { src: GraphLogo, label: "GraphQL" },
+];
+
+const skills = [
+    "Frontend development",
+    "Backend development",
+    "Problem solving",
+    "Responsive UI",
+    "Performance tuning",
+    "CMS implementation",
 ];
 
 const parallaxReveal = (delay = 0, distance = 52) => ({
@@ -159,7 +168,7 @@ export default function About() {
                                     <div className="age_wrapper flex h-full min-h-[210px] flex-col justify-between p-5 sm:p-6">
                                         <h2 className="text-lg sm:text-xl">Age</h2>
                                         <div>
-                                            <span className="block text-6xl font-bold leading-none text-zinc-900 dark:text-[#e4ded7] sm:text-7xl">
+                                            <span className="block text-6xl font-bold leading-none text-zinc-900 dark:text-[#e4ded7] sm:text-4xl">
                                                 <Counter birthDate="1997-09-08" />
                                             </span>
                                             <span className="mt-2 block overflow-hidden text-ellipsis whitespace-nowrap font-mono text-xs tabular-nums text-zinc-500 dark:text-zinc-400 sm:text-sm">
@@ -174,8 +183,8 @@ export default function About() {
                                 <SpotlightCard className="h-full" spotlightColor="rgba(255, 255, 255, 0.25)">
                                     <div className="project_wrapper flex h-full min-h-[190px] flex-col justify-between p-5 sm:p-6">
                                         <h2 className="text-lg sm:text-xl">Projects</h2>
-                                        <span className="text-4xl font-bold text-zinc-900 dark:text-[#e4ded7]">
-                                            <Counter value={10} />
+                                        <span className="text-6xl font-bold text-zinc-900 dark:text-[#e4ded7]">
+                                            <Counter value={25} />
                                         </span>
                                         <p className="text-sm leading-snug text-zinc-500 dark:text-zinc-400">Interfaces, dashboards, and workflows.</p>
                                     </div>
@@ -208,7 +217,7 @@ export default function About() {
                                                 </div>
                                             </div>
                                         ))}
-                                        <div className="companies flex min-w-0 max-w-full flex-col items-center gap-8 overflow-hidden text-center text-sm text-zinc-400">
+                                        <div className="companies flex min-w-0 max-w-full flex-col items-center border-t border-zinc-200 pt-5 dark:border-zinc-800 gap-8 overflow-hidden text-center text-sm text-zinc-400">
                                             <p>Companies I&apos;ve collaborated with</p>
                                             <Marquee
                                                 styles="opacity-[.3] hover:opacity-[.7] transition duration-300 ease-in-out"
@@ -258,10 +267,10 @@ export default function About() {
                         </SpotlightCard>
                     </motion.div>
                 </div>
-                <div className="row-span-1 grid h-full gap-8 space-y-2.5 md:col-span-12">
-                    <motion.div className="row-span-2 md:col-span-12" {...parallaxReveal(0.12, 54)}>
+                <div className="row-span-1 grid h-full gap-8 space-y-2.5 md:col-span-12 md:grid-cols-12">
+                    <motion.div className="row-span-2 md:col-span-7 lg:col-span-8" {...parallaxReveal(0.12, 54)}>
                         <SpotlightCard className="h-full" spotlightColor="rgba(229, 72, 77, 0.2)">
-                            <div className="p-6 md:p-8">
+                            <div className="p-5 sm:p-6 md:p-7 lg:p-8">
                                 <div className="mb-8 flex items-end justify-between gap-4">
                                     <div>
                                         <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[#e5484d] dark:text-primary-color">
@@ -273,14 +282,38 @@ export default function About() {
                                         {toolLogos.length} tools
                                     </span>
                                 </div>
-                                <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 md:grid-cols-8 xl:grid-cols-9">
+                                <div className="grid grid-cols-[repeat(auto-fit,minmax(64px,1fr))] gap-3 md:grid-cols-[repeat(auto-fit,minmax(70px,1fr))] xl:grid-cols-9">
                                     {toolLogos.map((tool) => (
                                         <div
                                             key={tool.label}
-                                            className="flex aspect-square items-center justify-center rounded-lg border border-[#d8d0c0]/80 bg-[#efe7d8]/70 p-3 shadow-[0_10px_26px_rgba(72,61,45,0.08),inset_0_1px_0_rgba(255,255,255,0.58)] dark:border-zinc-800 dark:bg-white/[0.03] dark:shadow-none"
+                                            className="flex aspect-square max-h-[78px] min-h-[64px] items-center justify-center rounded-lg border border-[#d8d0c0]/80 bg-[#efe7d8]/70 p-2.5 shadow-[0_10px_26px_rgba(72,61,45,0.08),inset_0_1px_0_rgba(255,255,255,0.58)] dark:border-zinc-800 dark:bg-white/[0.03] dark:shadow-none md:max-h-[86px]"
                                             data-sticky-tooltip={tool.label}
                                         >
-                                            <Image src={tool.src} alt={tool.label} width={42} height={42} />
+                                            <Image className="h-8 w-8 object-contain md:h-9 md:w-9" src={tool.src} alt={tool.label} width={36} height={36} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </SpotlightCard>
+                    </motion.div>
+                    <motion.div className="md:col-span-5 lg:col-span-4" {...parallaxReveal(0.16, 48)}>
+                        <SpotlightCard className="h-full" spotlightColor="rgba(51, 224, 146, 0.22)">
+                            <div className="p-5 sm:p-6 md:p-7 lg:p-8">
+                                <div className="mb-8">
+                                    <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[#e5484d] dark:text-primary-color">
+                                        Skills
+                                    </p>
+                                    <h2 className="text-2xl font-bold text-zinc-900 dark:text-[#e4ded7]">
+                                        What I bring
+                                    </h2>
+                                </div>
+                                <div className="grid gap-3 sm:grid-cols-2">
+                                    {skills.map((skill) => (
+                                        <div
+                                            key={skill}
+                                            className="rounded-lg border border-zinc-200 px-4 py-3 text-sm font-semibold text-zinc-700 dark:border-zinc-800 dark:text-zinc-300"
+                                        >
+                                            {skill}
                                         </div>
                                     ))}
                                 </div>

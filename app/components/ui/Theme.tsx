@@ -1,8 +1,8 @@
 'use client'
 import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
-import MoonIcon from "../assets/icons/MoonIcon";
-import SunIcon from "../assets/icons/SunIcon";
+import MoonIcon from "../../assets/icons/MoonIcon";
+import SunIcon from "../../assets/icons/SunIcon";
 
 const subscribe = (callback: () => void) => {
     const timeoutId = window.setTimeout(callback, 0);

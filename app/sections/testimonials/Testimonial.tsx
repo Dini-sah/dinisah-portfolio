@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import SpotlightCard from "../components/spotLightCard";
+import SpotlightCard from "../../components/ui/SpotlightCard";
 
 const testimonials = [
     {

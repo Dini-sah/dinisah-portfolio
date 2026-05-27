@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import SpotlightCard from "../components/spotLightCard";
+import SpotlightCard from "../../components/ui/SpotlightCard";
 
 const revealEase = [0.2, 0.65, 0.3, 0.9] as const;
 

@@ -1,12 +1,12 @@
 'use client';
 
-import About from "./about-section/About";
-import Contact from "./contact-section/Contact";
-import Cursor from "./components/cursor";
-import Hero from "./hero-section/Hero";
-import Navbar from "./navbar/Navbar";
-import Testimonial from "./testimonials-section/Testimonial";
-import Works from "./works-section/Works";
+import Cursor from "./components/effects/Cursor";
+import Navbar from "./components/layout/Navbar";
+import About from "./sections/about/About";
+import Contact from "./sections/contact/Contact";
+import Hero from "./sections/hero/Hero";
+import Testimonial from "./sections/testimonials/Testimonial";
+import Works from "./sections/works/Works";
 
 export default function Home() {
 

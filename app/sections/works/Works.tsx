@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type MotionProps } from "framer-motion";
-import SpotlightCard from "../components/spotLightCard";
+import SpotlightCard from "../../components/ui/SpotlightCard";
 
 const projects = [
     {

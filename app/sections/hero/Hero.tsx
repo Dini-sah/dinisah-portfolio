@@ -1,8 +1,15 @@
 'use client'
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
-import AnimatedTitle from "../animations/AnimatedTitle";
-import HeroSvg from "../assets/icons/HeroSvg";
+import AnimatedTitle from "../../animations/AnimatedTitle";
+import HeroSvg from "../../assets/icons/HeroSvg";
+import RollingText from "../../components/effects/RollingText";
+
+const statusMessages = [
+  "freelance",
+  "frontend roles",
+  "remote projects",
+];
 
 const Hero = () => {
 
@@ -144,9 +151,12 @@ const Hero = () => {
           variants={afterTitleAnimation}
         >
           <p className="z-50 text-center text-[16px] font-medium dark:text-[#e4ded7] text-zinc-800 md:text-[20px] lg:text-left">
-            Chennai Based Frontend Developer{" "}
-
-            currently available for work.
+            Chennai Based Frontend Developer currently available for{" "}
+            <RollingText
+              messages={statusMessages}
+              className="inline-flex min-w-[112px] items-center justify-center text-left text-[#e5484d] dark:text-primary-color sm:min-w-[132px] lg:justify-start"
+              cursorClassName="ml-0.5 h-4 w-px animate-pulse bg-current"
+            />
           </p>
         </motion.div>
 
@@ -165,4 +175,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

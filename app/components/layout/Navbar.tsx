@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Theme from "../components/theme";
+import Theme from "../ui/Theme";
 
 function Navbar() {
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
