@@ -140,7 +140,7 @@ const Hero = () => {
       sm:bottom-20 md:bottom-10 lg:w-[90%] lg:max-w-[1440px] lg:justify-between"
       >
         <motion.div
-          className="max-w-[350px] md:max-w-[400px] lg:max-w-[400px]"
+          className="max-w-[320px] md:max-w-[400px] lg:max-w-[400px]"
           variants={afterTitleAnimation}
         >
           <p className="z-50 text-center text-[16px] font-medium dark:text-[#e4ded7] text-zinc-800 md:text-[20px] lg:text-left">

@@ -118,7 +118,7 @@ export default function About() {
                                     </motion.div>
                                     <div className="absolute left-6 top-6 rounded-lg border border-white/20 bg-zinc-950/70 px-4 py-3 text-[#e4ded7] backdrop-blur">
                                         <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">Current</p>
-                                        <p className="mt-1 text-sm font-bold">Frontend Developer</p>
+                                        <p className="mt-1 text-sm font-bold">Web Developer</p>
                                     </div>
                                     <div className="flex flex-col">
                                         <ChatPopup />
