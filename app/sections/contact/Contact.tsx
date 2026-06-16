@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import SpotlightCard from "../../components/ui/SpotlightCard";
+import RevealHeading from "../../animations/RevealHeading";
 
 const revealEase = [0.2, 0.65, 0.3, 0.9] as const;
 
@@ -39,9 +40,10 @@ export default function Contact() {
                                 <p className="mb-6 text-sm uppercase tracking-[0.18em] text-[#e5484d] dark:text-primary-color max-[374px]:mb-5 max-[374px]:text-xs">
                                     Contact
                                 </p>
-                                <h2 className="max-w-[900px] text-[clamp(2.5rem,14vw,6rem)] font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-8xl lg:text-[132px]">
-                                    Let&apos;s build the next sharp interface
-                                </h2>
+                                <RevealHeading
+                                    text="Let's build the next sharp interface"
+                                    className="max-w-[900px] text-[clamp(2.5rem,14vw,6rem)] font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-8xl lg:text-[132px]"
+                                />
                             </div>
 
                             <div className="grid gap-6 md:grid-cols-2 md:items-end">

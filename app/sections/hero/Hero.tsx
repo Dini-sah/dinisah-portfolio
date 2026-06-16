@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import AnimatedTitle from "../../animations/AnimatedTitle";
 import HeroSvg from "../../assets/icons/HeroSvg";
-import RollingText from "../../components/effects/RollingText";
+import RotatingText from "../../components/effects/RotatingText";
 
 const statusMessages = [
   "freelance",
@@ -152,11 +152,24 @@ const Hero = () => {
         >
           <p className="z-50 text-center text-[16px] font-medium dark:text-[#e4ded7] text-zinc-800 md:text-[20px] lg:text-left">
             Chennai Based Frontend Developer currently available for{" "}
-            <RollingText
+            <RotatingText
+              texts={statusMessages}
+              mainClassName="inline-flex min-w-[112px] items-center justify-center overflow-hidden text-left text-[#e5484d] dark:text-primary-color sm:min-w-[132px] lg:justify-start"
+              // mainClassName="inline-flex min-w-[112px] items-center justify-center overflow-hidden rounded-lg bg-primary-color px-2 py-0.5 text-left text-white sm:min-w-[132px] sm:px-2 sm:py-1 md:px-3 md:py-2 lg:justify-start"
+              staggerFrom="last"
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-120%", opacity: 0 }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2000}
+            />
+            {/* <RollingText
               messages={statusMessages}
               className="inline-flex min-w-[112px] items-center justify-center text-left text-[#e5484d] dark:text-primary-color sm:min-w-[132px] lg:justify-start"
               cursorClassName="ml-0.5 h-4 w-px animate-pulse bg-current"
-            />
+            /> */}
           </p>
         </motion.div>
 

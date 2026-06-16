@@ -5,6 +5,7 @@ import { motion, type Variants } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import SpotlightCard from "../../components/ui/SpotlightCard";
+import RevealHeading from "../../animations/RevealHeading";
 
 const testimonials = [
     {
@@ -90,9 +91,10 @@ export default function Testimonial() {
                         <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#e5484d] dark:text-primary-color">
                             Testimonials
                         </p>
-                        <h2 className="max-w-[860px] text-5xl font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-7xl lg:text-8xl">
-                            What teams say after shipping
-                        </h2>
+                        <RevealHeading
+                            text="What teams say after shipping"
+                            className="max-w-[860px] text-5xl font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-7xl lg:text-8xl"
+                        />
                     </div>
                     <p className="text-lg font-medium leading-relaxed text-zinc-600 dark:text-zinc-300 md:col-span-4 md:text-right">
                         Practical feedback from product and engineering partners across dashboard, workflow, and interface-heavy builds.

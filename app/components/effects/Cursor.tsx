@@ -22,9 +22,9 @@ export default function Cursor() {
 
         animate(element, { x: 0, y: 0 }, {
             type: "spring",
-            stiffness: 270,
+            stiffness: 870,
             damping: 12,
-            mass: 0.42
+            mass: 0.92
         });
     }, []);
 
@@ -75,7 +75,7 @@ export default function Cursor() {
                     {
                         type: "spring",
                         stiffness: 360,
-                        damping: 24,
+                        damping: 12,
                         mass: 0.28
                     }
                 );

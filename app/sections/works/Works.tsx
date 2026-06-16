@@ -2,6 +2,7 @@
 
 import { motion, type MotionProps } from "framer-motion";
 import SpotlightCard from "../../components/ui/SpotlightCard";
+import RevealHeading from "../../animations/RevealHeading";
 
 const projects = [
     {
@@ -73,9 +74,10 @@ export default function Works() {
                         <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#e5484d] dark:text-primary-color">
                             Selected work
                         </p>
-                        <h2 className="max-w-[780px] text-5xl font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-7xl lg:text-8xl">
-                            Product screens with a builder&apos;s mindset
-                        </h2>
+                        <RevealHeading
+                            text="Product screens with a builder's mindset"
+                            className="max-w-[780px] text-5xl font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-7xl lg:text-8xl"
+                        />
                     </div>
                     <p className="text-lg font-medium leading-relaxed text-zinc-600 dark:text-zinc-300 md:col-span-5 md:text-right">
                         I focus on useful details: fast loading states, keyboard-friendly flows, readable data, and components that teams can keep shipping with.
