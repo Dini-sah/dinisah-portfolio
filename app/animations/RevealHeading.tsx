@@ -4,29 +4,58 @@ import { motion, type Variants } from "framer-motion";
 
 type RevealHeadingProps = {
   className?: string;
+  lines?: string[];
   once?: boolean;
   text: string;
 };
 
-const wordVariants: Variants = {
+const lineVariants: Variants = {
   hidden: {
     clipPath: "inset(0 100% 0 0)",
   },
-  visible: {
-    clipPath: "inset(0 0% 0 0)",
+  visible: (index: number) => ({
+    clipPath: [
+      "inset(0 100% 0 0)",
+      "inset(0 100% 0 0)",
+      "inset(0 100% 0 0)",
+      "inset(0 0% 0 0)",
+    ],
     transition: {
-      duration: 0.95,
-      ease: [0.16, 1, 0.3, 1],
+      delay: index * 0.22,
+      duration: 1.85,
+      ease: [0.4, 1, 0.3, 1],
+      times: [0.5, 0.9, 0.9, 1],
     },
+  }),
+};
+
+const maskVariants: Variants = {
+  hidden: {
+    clipPath: "inset(0 100% 0 0)",
   },
+  visible: (index: number) => ({
+    clipPath: [
+      "inset(0 100% 0 0)",
+      "inset(0 0% 0 0)",
+      "inset(0 0% 0 0)",
+      "inset(0 0% 0 100%)",
+    ],
+    transition: {
+      delay: index * 0.22,
+      duration: 1.85,
+      ease: [0.4, 1, 0.3, 1],
+      times: [0.5, 0.9, 0.9, 1],
+    },
+  }),
 };
 
 export default function RevealHeading({
   className = "",
+  lines,
   once = true,
   text,
 }: RevealHeadingProps) {
-  const words = text.split(" ");
+  const revealLines = lines ?? [text];
 
   return (
     <motion.h2
@@ -35,19 +64,27 @@ export default function RevealHeading({
       initial="hidden"
       whileInView="visible"
       viewport={{ once, amount: 0.65, margin: "0px 0px -12% 0px" }}
-      transition={{ staggerChildren: 0.045 }}
     >
-      {words.map((word, index) => (
-        <motion.span
-          key={`${word}-${index}`}
-          className="inline-block overflow-hidden align-bottom"
-          variants={wordVariants}
+      {revealLines.map((line, index) => (
+        <span
+          key={`${line}-${index}`}
+          className="relative block overflow-hidden"
         >
-          <span aria-hidden="true" className="inline-block">
-            {word}
-          </span>
-          {index < words.length - 1 && <span aria-hidden="true">&nbsp;</span>}
-        </motion.span>
+          <motion.span
+            aria-hidden="true"
+            className="block will-change-[clip-path]"
+            custom={index}
+            variants={lineVariants}
+          >
+            {line}
+          </motion.span>
+          <motion.span
+            aria-hidden="true"
+            className="absolute inset-0 z-10 bg-primary-color will-change-[clip-path]"
+            custom={index}
+            variants={maskVariants}
+          />
+        </span>
       ))}
     </motion.h2>
   );

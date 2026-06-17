@@ -93,6 +93,7 @@ export default function Testimonial() {
                         </p>
                         <RevealHeading
                             text="What teams say after shipping"
+                            lines={["What teams say", "after shipping"]}
                             className="max-w-[860px] text-5xl font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-7xl lg:text-8xl"
                         />
                     </div>

@@ -76,6 +76,7 @@ export default function Works() {
                         </p>
                         <RevealHeading
                             text="Product screens with a builder's mindset"
+                            lines={["Product screens with a", "builder's mindset"]}
                             className="max-w-[780px] text-5xl font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-7xl lg:text-8xl"
                         />
                     </div>

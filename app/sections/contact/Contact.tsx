@@ -42,6 +42,7 @@ export default function Contact() {
                                 </p>
                                 <RevealHeading
                                     text="Let's build the next sharp interface"
+                                    lines={["Let's build the next", "sharp interface"]}
                                     className="max-w-[900px] text-[clamp(2.5rem,14vw,6rem)] font-extrabold uppercase leading-[0.88] text-zinc-900 dark:text-[#e4ded7] sm:text-8xl lg:text-[132px]"
                                 />
                             </div>
